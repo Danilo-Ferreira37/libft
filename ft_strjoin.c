@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dosorio- <dosorio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dosorio- <dosorio-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:02:50 by dosorio-          #+#    #+#             */
-/*   Updated: 2025/12/30 16:03:41 by dosorio-         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:59:13 by dosorio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	d[i] = '\0';
 	return (d);
 }
-/* #include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -48,4 +48,4 @@ int	main(void)
 
 	printf("%s\n", ft_strjoin(s1, s2));
 	return (0);
-} */
+}

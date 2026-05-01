@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dosorio- <dosorio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dosorio- <dosorio-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 14:40:23 by dosorio-          #+#    #+#             */
-/*   Updated: 2025/12/30 16:02:56 by dosorio-         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:42:14 by dosorio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	free(lst);
 }
 
-void	delet(void *content)
+void	libera(void *content)
 {
 	free(content);
 }

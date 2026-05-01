@@ -6,7 +6,7 @@
 #    By: dosorio- <dosorio-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/27 16:05:53 by dosorio-          #+#    #+#              #
-#    Updated: 2026/01/09 20:54:18 by dosorio-         ###   ########.fr        #
+#    Updated: 2025/11/03 17:00:19 by dosorio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC	=	ft_atoi.c		\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
 		ft_putstr_fd.c	\
+		ft_putnbr_base.c \
 		ft_split.c		\
 		ft_strchr.c		\
 		ft_strdup.c		\
@@ -46,9 +47,8 @@ SRC	=	ft_atoi.c		\
 		ft_substr.c		\
 		ft_tolower.c	\
 		ft_toupper.c	\
-		ft_isspace.c	\
-		ft_isoperator.c	\
-		ft_lstadd_back_bonus.c	\
+
+BONUS =	ft_lstadd_back_bonus.c	\
 		ft_lstadd_front_bonus.c	\
 		ft_lstclear_bonus.c		\
 		ft_lstdelone_bonus.c	\
@@ -60,6 +60,7 @@ SRC	=	ft_atoi.c		\
 
 # Transforma os srcs em objetos
 OBJ			= $(SRC:.c=.o)
+BONUS_OBJ	= $(BONUS:.c=.o)
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
@@ -69,15 +70,18 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

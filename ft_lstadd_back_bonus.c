@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dosorio- <dosorio-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:49:14 by dosorio-          #+#    #+#             */
-/*   Updated: 2026/01/09 20:59:23 by dosorio-         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:22:09 by dosorio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new_node)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!lst || !new_node)
+	if (!lst || !new)
 		return ;
 	if (*lst == NULL)
 	{
-		*lst = new_node;
+		*lst = new;
 		return ;
 	}
 	last = ft_lstlast(*lst);
-	last->next = new_node;
+	last->next = new;
 }
 /* int main(void)
 {

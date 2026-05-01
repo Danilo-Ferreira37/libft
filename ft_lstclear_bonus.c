@@ -6,7 +6,7 @@
 /*   By: dosorio- <dosorio-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 15:16:38 by dosorio-          #+#    #+#             */
-/*   Updated: 2026/01/13 13:53:49 by dosorio-         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:41:56 by dosorio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = temp;
 	}
 }
+/* void libera(void *content)
+{
+	free(content);
+}
 
-/* int	main(void)
+int	main(void)
 {
 	t_list *lst = ft_lstnew(strdup("um"));
 	ft_lstadd_back(&lst, ft_lstnew(strdup("dois")));

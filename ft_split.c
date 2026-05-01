@@ -6,7 +6,7 @@
 /*   By: dosorio- <dosorio-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 12:58:09 by dosorio-          #+#    #+#             */
-/*   Updated: 2025/12/19 19:28:24 by dosorio-         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:30:50 by dosorio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	counter_words(const char *s, char c)
 
 	i = 0;
 	counter = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			counter++;
@@ -71,7 +71,7 @@ static int	fill_words(char **d, const char *s, char c)
 	{
 		if (s[i] != c)
 		{
-			start = s + i;
+			start = &s[i];
 			size = len_word(start, c);
 			d[j] = ft_strndup(start, size);
 			if (!d[j])
@@ -109,10 +109,10 @@ char	**ft_split(char const *s, char c)
 	return (d);
 }
 
-/*
+#include <stdio.h>
 int	main(void)
 {
-	char **r = ft_split("banana,maçã,kiwi", ',');
+	char **r = ft_split(",,,,banana,,,,maçã,kiwi", ',');
 	int i = 0;
 
 	while (r[i])
@@ -123,4 +123,4 @@ int	main(void)
 	free(r);
 
 	return (0);
-} */
+}
