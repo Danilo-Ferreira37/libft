@@ -16,6 +16,14 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 
 /*  Phase 1: Character and String Basics */
 int					ft_isalpha(int c);
@@ -58,13 +66,26 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /* File Descriptor Functions */
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+int				ft_putchar_fd(char c, int fd);
+int				ft_putstr_fd(char *s, int fd);
+int				ft_putendl_fd(char *s, int fd);
+int				ft_putnbr_fd(int n, int fd);
 
 /* Get Next Line */
+size_t	            strlen_newline(char const *str);
+char	            *gnl_strjoin(char *s1, char *s2);
+void	            clean_buffer(char *buffer);
+int		            has_newline(char *str);
 char				*get_next_line(int fd);
+
+/* Printf*/
+typedef unsigned long long	t_ull;
+
+int							ft_printf(const char *s, ...);
+int							ft_base(unsigned int n, unsigned int base,
+								char *symbols);
+int							ft_print_adress(void *adrs, unsigned int base_len,
+								char *base);
 
 /* Bonus */
 typedef struct s_list
